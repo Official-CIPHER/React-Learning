@@ -1,0 +1,59 @@
+rafce -> Stands for React Arrow function component export
+  which is react snippet to quickly write the boiler plate function for react 
+  file start.
+
+
+Fragments - <></> -> An empty angle bracket which is used to return multiple 
+  tags inside this frags 
+  -> It is not visible inside html root div
+
+
+# Normal Structure of React File -
+
+/App.jsx (Child File)
+
+import React from 'react'
+
+const App = () => {---------------------> Function which return in main file 
+  return (
+    <> -----------------> Fragments
+    <div>
+      Hello
+    </div>
+    </>
+  )
+}
+
+export default App
+
+
+/main.jsx (Parent File) 
+
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App /> -----------> Render the App inside the index.html inside root id div
+  </StrictMode>,
+)
+
+
+/index.html (Grand Parent File)
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04-react-folder-one</title>
+  </head>
+  <body>
+    <div id="root"></div>------------------------------------> Its the main div
+    <script type="module" src="/src/main.jsx"></script>----------> With the help of 
+    js we dynamically add the structure and website here
+  </body>
+</html>

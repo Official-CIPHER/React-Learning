@@ -1,0 +1,29 @@
+JSX :- 
+===============
+JSX stands for Javascript XML 
+
+-> It allows to write HTML like code inside Javascript.
+
+  ex:- const ele = <h1>Hello</h1>
+   It look like HTML but its actually a JS.
+
+
+-> JSX is not HTML , It get converted (Babel) into Javascript.
+  
+  jsx :-
+    <h1>Hello</h1>
+
+  js :-
+  React.createElement("h1", {}, "Hello");
+
+
+# Babel :- 
+  Its is Transpiler which is specialized type of compiler that 
+  convert source code of one high level language to another 
+  high level language with tha same abstraction level.
+
+  JSX ----------> Javascript
+
+# Bundler :- It is tool which helps to create a folders.
+  
+  -> For react we will used "VITE" Bundler

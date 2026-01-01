@@ -1,0 +1,48 @@
+Real DOM:-
+======================== 
+  Tree like structure which is used to represent the html tags 
+  (Structure)
+  
+    HTML ->(left side) -> head -> title
+    -> (right side) -> body -> header
+                        -> section1 -> h1 (changed)
+                                -> img
+                                -> button (changed)
+                        -> section2
+                        -> section3
+
+> When we want to clickthe button and change the text , then it
+will re- render the entire page.(Browser update the DOM)
+
+    > Problem :-
+     1. Update the DOM is slow
+     2. Re-rendering large pages cost performance
+     3. Every change can cause layout recalculate
+
+
+Virtual DOM:-
+========================
+  Virtual DOM is the lightweight copy of Real DOM.
+  The Virtual DOM is a Javascript Object that represents the UI.
+
+  HTML ->(left side) -> head -> title
+    -> (right side) -> body -> header
+                        -> section1 -> h1 (Changed)
+                                -> img
+                                -> button (Changed)
+                        -> section2
+                        -> section3
+
+> How react uses it:-
+1. State changes
+2. React create the new vitual DOM
+3. React Comparews it with the old vitual dom (Diffing).
+4. React update only the changed parts in real dom. (Reconciliation)
+
+# Diffing :- (spotting the changes)
+  Finding what changed
+  Compare old Virtual dom with the new vitual dom and find the 
+  difference.
+
+# Reconciliation :- (apply the changes)
+  Using the Diffing result to update the real dom in the best way.

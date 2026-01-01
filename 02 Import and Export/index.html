@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>02 Import and Export</title>
+</head>
+<body>
+  <h1>02 Import and Export</h1>
+  <br>
+  <h2>2 types of export </h2>
+  <br>
+  <h3>1st - Default Export</h3>
+  <pre>
+    -> Only one Default export per file.
+    -> Import name can be anything.
+    -> No {}
+  </pre>
+  <pre>
+    Code:- app.js
+    const a = 10;
+    export default a;
+    
+    /script.js
+    import importfromapp from "./app.js"
+    console.log(importfromapp);
+
+    Output - 10
+  </pre>
+  <hr>
+  <br>
+  <h3>2nd - Named Export</h3>
+  <pre>
+    -> You can multiple export per file.
+    -> Must be used same name
+    -> Use {}
+    -> Safer for large project.
+  </pre>
+  <pre>
+    Code:- app.js
+    export const b = 120;
+    
+    /script.js
+    import {b} from "./app.js"
+    console.log(b);
+
+    Output - 120
+  </pre>
+  
+  <script type="module" src="script.js"></script>
+</body>
+</html>
