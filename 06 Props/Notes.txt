@@ -1,0 +1,94 @@
+#Props :- (Properties)
+---------------
+It is mechanism to pass data from parent component
+to child component.
+
+
+Structure Of Data Flow :-
+-------------------------------
+    App ---
+   ⬆️    | ✅
+❌ |    🔽
+    ----Child ---
+         ⬆️    | ✅
+      ❌ |    🔽
+          -----img
+
+
+
+-> Props are Read Only data.
+-> Passes top -> down (Unidirectional data flow).
+-> Looks like HTML attributes, but they are JS values.
+
+  Ex:-
+    function Child({name}) {
+      return <h1>Hello, {name}</h1>
+    }
+
+    function Parent() {
+      return <Child name="Vishal" /> -----> Vishal
+                    ------------
+                      ( Props )
+    }
+
+-> Props are not just data included with tags.
+-> Props are inputs to a components.
+
+
+# Prop Drilling :-
+----------------------
+  It is pattern (or problem) where props are passed
+  through multiple intermediate component that do 
+  not need the data themeselves, just to reach a
+  deeply nested component.
+
+  Ex:- 
+    function App() {                      |
+      return <Parent name="Alex"/>        |
+    }                                     |\
+                                          | \
+    function Parent({name}) {             |  \
+      return <Child name={name}/>         |   \
+    }                                     |   Prop Drilling
+                                          |   /  name is drilled
+    function Child({name}) {              |  /   through Parent
+      return <GrandChild name={name}/>    | /    and Child
+    }                                     |/
+                                          |
+    function GrandChild({name}) {         |
+      return <h1>Hello, {name}</h1>       |
+    }                                     |
+
+
+## Solution for Prop Drilling :-
+----------------------------------
+  -> Use Context API
+  -> Use Redux / Zustand / Recoil
+  -> Component Composition
+  -> Custom Hooks
+
+# How Props Send :-
+---------------
+2 Ways :-
+  
+  1. Normal Way 
+      function Child(props) {
+        return <h1>Hello , {props.name} </h1>
+      }
+
+    ## props -> Can give any name , but whatever
+      name it is always a object.
+
+  2. Destructure Way 
+      function Child({name}) {
+        return <h1>Hello , {name} </h1>
+      } 
+
+    ## We have to give the same name as we have 
+      passed as props from parent component.
+
+## Keypoints :-
+------------------
+Pass props values -
+      String - "" (Double quotes), '' (Single quotes).
+      Integer, Array, Variable - {} (Curly bracket)
