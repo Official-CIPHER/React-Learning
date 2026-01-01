@@ -1,0 +1,63 @@
+#Components :- 
+-------------------------------
+  -> A reuseable piece of the User Interface (UI).
+  
+  -> Think of components like building block that together
+  make up a web page.
+
+  -> It is a JavaScript function or class that :-
+      * Return UI (usually written in JSX).
+      * Can receive data (Called props).
+      * Can manage its own data (Called State).
+
+  Ex:-
+    function Greeting() {
+      return <h1>Hello, Good Morning !!</h1>
+    }
+
+    You can use components like html tags.
+
+    <Greeting/>
+
+
+#Types of Components:-
+------------------------------
+1. Function Components (Most Common ✅)
+2. Class Components
+
+## 1. Function Components :-
+        * Written as JS Function. 
+        * Can use Hooks (Like useState, useEffect).
+
+    Ex:- Function hello(props) {
+      return <h1>Hello, {props.name}</h1>
+    }
+
+    <hello/> -----> Hello, Vishal
+
+## 2. Class based Components :-
+        * Written as JS Classes.
+        * Use this.state and lifecycle methods.
+
+    Ex:- class welcome extends React,component {
+      render() {
+        return <h1>Hello, {this.props.name}</h1>
+      }
+    }
+
+  
+# Importance of Components :-
+---------------------------------
+1. Reusability - use same components multiple times.
+2. Modular - easier to manage and organize code.
+3. Maintainability - changes affect only that component.
+4. Efficient  - React updates only what changes.
+
+
+  Ex:-
+  ## A website can broken into components like
+    -> Header   |
+    -> Navbar   | \
+    -> Sidebar  |   Separate Components
+    -> Button   | /
+    -> Footer   |
