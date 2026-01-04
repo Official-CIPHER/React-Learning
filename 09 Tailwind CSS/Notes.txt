@@ -1,0 +1,79 @@
+# What is Tailwind CSS?
+-------------------------------------------------
+-> Tailwind CSS is a utility-first CSS framework
+-> Instead of writing custom CSS, we use predefined utility classes
+-> Styling is done directly inside HTML / JSX
+
+  Ex :-
+  <button class="bg-black text-white px-4 py-2 rounded">
+  Click Me
+  </button>
+
+
+## Utility-First Approach :- 
+  * No separate CSS files for components
+  * Each class does only one job
+  * Combine multiple utilities to build UI
+
+  Ex :- 
+  <div class="flex items-center justify-between p-4">
+
+
+## Mobile-First & Responsive Design :- 
+  * Tailwind follows mobile-first approach
+  * Base classes = mobile
+  * Breakpoints apply above that size
+
+  Size List - 
+  sm  → 640px
+  md  → 768px
+  lg  → 1024px
+  xl  → 1280px
+  2xl → 1536px
+
+
+# How To Install Tailwind CSS in JSX :- 
+
+1. Create project (example: Vite + React)
+  Commands - 
+    npm create vite@latest my-app
+    cd my-app
+    npm install
+
+2. Install Tailwind CSS
+  Commands -
+    npm install tailwindcss @tailwindcss/vite
+
+3. Update vite.config.js
+  import { defineConfig } from "vite";
+  import react from "@vitejs/plugin-react";
+  import tailwindcss from "@tailwindcss/vite";
+
+  export default defineConfig({
+    plugins: [react(), tailwindcss()],
+  });
+
+4. Add Tailwind to CSS file
+
+  Open src/index.css (ya main.css) 
+
+  @import "tailwindcss";
+
+5. Import CSS in main file
+  React (main.jsx)
+  import "./index.css";
+
+6. Run project
+  npm run devs
+
+7. Test Tailwind
+  <h1 className="text-3xl font-bold text-red-500">
+  Tailwind is working 🚀
+  </h1>
+
+
+📁 Minimal Folder Structure :-
+  src/
+  ├─ index.css   ← Tailwind here
+  ├─ main.jsx
+  └─ App.jsx
