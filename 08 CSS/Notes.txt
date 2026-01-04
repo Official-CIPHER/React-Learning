@@ -1,0 +1,37 @@
+# CSS :-
+------------
+    Cascading style sheets, It is used to style 
+    the user interface.
+
+## There are multiple way to write CSS :-
+--------------------------------------------
+1. Global CSS - index.css
+2. Internal CSS - Inside the page
+3. Inline CSS - inside the tag
+
+-> These are some basic way to style the UI.
+-> In React, We some other ways to style the UI -
+    *1. Different Folder -
+     Create Different Folder for styling, and 
+    maintain the each component styling in 
+    different css file.
+      
+      ** But there is a problem - When we render all
+      the file , they overlaps each other styling.
+      ** That why this method also not most preferable.
+
+    *2. Modular Approach -
+      Create a separate Folder inside component Folder
+      including the jsx and its style in same folder.
+
+        ** How do we import this -
+          import styles from './Button.module.css'
+
+          return (
+          <div className={styles.btn}>
+            This is Button
+          </div>)
+
+          ** Now the overlap will not occur.
+          ** Use when you want to write and create the 
+          separate css for each file.
