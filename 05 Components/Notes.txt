@@ -44,9 +44,17 @@
 
     class welcome extends Component {
       render() {
-        return <h1>Hello, {this.props.name}</h1>
+        return (
+          <h1>Hello, {this.props.name}</h1>
+          <p>Age, {this.props.age}</p>
+          )
       }
     }
+
+    export default welcome;
+
+    /App.jsx file
+    <welcome name="Rahul" age={22} />
 
   
 # Importance of Components :-
