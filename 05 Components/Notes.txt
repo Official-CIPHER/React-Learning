@@ -39,7 +39,10 @@
         * Written as JS Classes.
         * Use this.state and lifecycle methods.
 
-    Ex:- class welcome extends React,component {
+    Ex:- 
+    import React, {Component} from 'react';
+
+    class welcome extends Component {
       render() {
         return <h1>Hello, {this.props.name}</h1>
       }
